@@ -4,6 +4,5 @@ WORKDIR /app
 
 COPY . .
 
-RUN chmod +x mvnw && ./mvnw clean package
-
-CMD ["java", "-jar", "target/*.jar"]
+RUN chmod +x mvnw && ./mvnw clean install -DskipTests
+CMD ["sh", "-c", "java -jar target/*.jar"]
